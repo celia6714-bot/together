@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性平 Together - 臺北市教育局幼兒園性別平等教育學具發行成果</title>
+    <style>
+        /* CSS 樣式綜整 */
+        :root {
+            --primary-color: #F5A623; /* 主視覺橘色 */
+            --secondary-color: #4A90E2; /* 藍色標籤 */
+            --success-color: #7ED321;   /* 綠色標籤 */
+            --text-dark: #333333;
+            --bg-light: #F9F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero 區塊 */
+        header {
+            background: linear-gradient(135deg, #F5A623 0%, #FFCC33 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* 數據統計區塊 */
+        .stats-bar {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+
+        .stat-item p {
+            color: #777;
+            font-weight: bold;
+        }
+
+        /* 桌遊展示區塊 */
+        .game-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .game-img-real {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: white;
+            padding: 15px;
+        }
+
+        .game-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 3px 12px;
+            border-radius: 50px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        .game-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .game-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* 查看玩法按鈕樣式 */
+        .btn-guide {
+            display: block;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-guide:hover {
+            background-color: #e09612;
+            transform: scale(1.02);
+        }
+
+        /* 相關報導區塊 */
+        .news-section {
+            padding: 60px 0;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .news-list {
+            list-style: none;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .news-list li {
+            padding: 20px;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news-list li:hover {
+            background-color: #fffaf0;
+        }
+
+        .news-source {
+            background: #eee;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+
+        .news-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+
+        .news-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: #999;
+            margin-left: 15px;
+        }
+
+        /* 頁尾 */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .btn-footer {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            .news-list li { flex-direction: column; align-items: flex-start; }
+            .news-source { margin-bottom: 10px; }
+            .news-date { margin-top: 5px; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span class="badge">臺北市政府教育局幼兒園性別平等教育學具發行成果</span>
+            <h1>性平 Together</h1>
+            <p>十年里程碑，三款性別平等桌遊正式發表。透過遊戲化教育，讓身體自主、尊重差異、自我認同的核心概念成為孩子生活的一部分。</p>
+        </div>
+    </header>
+
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>10年+</h2>
+                    <p>教材研發與深耕</p>
+                </div>
+                <div class="stat-item">
+                    <h2>800套</h2>
+                    <p>正式發行量</p>
+                </div>
+                <div class="stat-item">
+                    <h2>100%</h2>
+                    <p>公私立幼兒園配發</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>精選發行桌遊</h2>
+            </div>
+
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="game1.jpg" alt="《身體界線守護隊》桌遊外盒" class="game-img-real">
+                    <div class="game-content">
+                        <span class="tag" style="background-color: var(--secondary-color);">身體自主</span>
+                        <h3>《身體界線守護隊》</h3>
+                        <p>透過生活中常見的情境練習，引導幼兒學會表達感受、勇敢拒絕與尋求協助，建立自我保護策略。</p>
+                        <a href="https://sites.google.com/view/ge-together/" target="_blank" class="btn-guide">💡 查看玩法說明</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="game2.jpg" alt="《昆蟲夥伴集合！》桌遊外盒" class="game-img-real">
+                    <div class="game-content">
+                        <span class="tag" style="background-color: var(--success-color);">尊重差異</span>
+                        <h3>《昆蟲夥伴集合！》</h3>
+                        <p>一起找昆蟲、認識差異，理解興趣與能力不受性別限制，在遊戲中練習相互欣賞與支持。</p>
+                        <a href="https://sites.google.com/view/ge-together/" target="_blank" class="btn-guide">💡 查看玩法說明</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="game3.jpg" alt="《環島尋光 GO！》桌遊外盒" class="game-img-real">
+                    <div class="game-content">
+                        <span class="tag" style="background-color: var(--primary-color);">多元職涯</span>
+                        <h3>《環島尋光 GO！》</h3>
+                        <p>收錄 16 位人物生命故事，帶領幼兒突破性別刻板印象，看見無限可能，遇見榜樣的力量。</p>
+                        <a href="https://sites.google.com/view/ge-together/" target="_blank" class="btn-guide">💡 查看玩法說明</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <div class="container">
+            <div class="section-title">
+                <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 報導連結區塊專屬 CSS */
+        .news-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 25px;
+            border-left: 5px solid #F5A623; /* 橘色主題色 */
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+
+        .news-item:hover {
+            background-color: #fffaf0; /* 滑過時顯示淡橘色 */
+        }
+
+        .news-source {
+            min-width: 100px;
+            text-align: center;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 20px;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .news-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            flex-grow: 1;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+
+        .news-link:hover {
+            color: #F5A623;
+            text-decoration: underline;
+        }
+
+        /* 響應式調整：手機版 */
+        @media (max-width: 600px) {
+            .news-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .news-source {
+                margin-bottom: 8px;
+                min-width: auto;
+            }
+            .news-link {
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="news-section">
+    <h2 class="news-title">媒體報導與見證</h2>
+    <ul class="news-list">
+        <li class="news-item">
+            <span class="news-source">僑務電子報</span>
+            <a href="https://ocacnews.net/article/414592" class="news-link" target="_blank">臺北市發表三款性別平等桌遊 深化幼兒性平教育</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">聯合新聞網</span>
+            <a href="https://udn.com/news/story/7323/9180360" class="news-link" target="_blank">十年磨一劍！北市三款性平桌遊發表 引導孩子尊重差異</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">中央社</span>
+            <a href="https://www.cna.com.tw/news/aloc/202512030359.aspx" class="news-link" target="_blank">北市發表三款性平桌遊 扎根幼兒身體自主教育</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">LINE TODAY</span>
+            <a href="https://today.line.me/tw/v3/article/LXN23L2" class="news-link" target="_blank">性平Together！北市三款性平桌遊正式入園</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">PChome 新聞</span>
+            <a href="https://news.pchome.com.tw/public/taipei/20251203/index-76474772026705126016.html" class="news-link" target="_blank">性平 Together 十年里程碑 北市桌遊發行成果</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">NOWnews</span>
+            <a href="https://www.nownews.com/news/6761047?srsltid=AfmBOor5O-tpQKxf3JbygHOG1J6A3uQpYThoCJ57SWV3bK_RgEbrolHj" class="news-link" target="_blank">性平教育從小扎根！北市幼兒園推三款創意桌遊</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">客新聞</span>
+            <a href="https://hakkanews.tw/2025/01/21/175685/" class="news-link" target="_blank">北市發表性平桌遊：引導孩子學會自我保護與欣賞獨特</a>
+        </li>
+        <li class="news-item">
+            <span class="news-source">北市教育局</span>
+            <a href="https://www.doe.gov.taipei/News_Content.aspx?n=B3DDF0458F0FFC11&sms=72544237BBE4C5F6&s=2B445E16B874741E" class="news-link" target="_blank">官方新聞稿：性平Together 十年里程碑 北市三款桌遊正式發表</a>
+        </li>
+    </ul>
+</section>
+
+</body>
+</html>
+        </div>
+    </footer>
+
+</body>
+</html>
